@@ -1,18 +1,21 @@
 import {Component} from 'react';
 import LoginCard from './component/LoginCard';
-import googleIcon from './elements/googleIcon.svg';
-import facebookIcon from './elements/facebookIcon.svg';
-import githubIcon from './elements/githubIcon.svg';
-import twitterIcon from './elements/twitterIcon.svg';
-import emailIcon from './elements/emailIcon.svg';
-import lockIcon from './elements/lockIcon.svg';
-import devChallenge from './elements/devchallenges.svg'
+import RegisterCard from './component/RegisterCard';
+
+
+import {Switch,BrowserRouter,Route} from 'react-router-dom';
 
 class App extends Component
 {
   render(){
     return(
-      <LoginCard devChallenge = {devChallenge} googleIcon = {googleIcon} facebookIcon = {facebookIcon} twitterIcon = {twitterIcon} githubIcon = {githubIcon} lockIcon = {lockIcon} emailIcon = {emailIcon} />
+      <BrowserRouter>
+        <Switch>
+          <Route path = "/Login" component={LoginCard} />
+          <Route exact path = "/" component={RegisterCard} />
+          <Route path = "/Register" component={RegisterCard} />
+        </Switch>
+      </BrowserRouter>
     )
   }
 }

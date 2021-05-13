@@ -1,4 +1,3 @@
-import '../App.css';
 
 import googleIcon from '../elements/googleIcon.svg';
 import facebookIcon from '../elements/facebookIcon.svg';
@@ -8,9 +7,9 @@ import emailIcon from '../elements/emailIcon.svg';
 import lockIcon from '../elements/lockIcon.svg';
 import devChallenge from '../elements/devchallenges.svg';
 
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
-const LoginCard = ()=>{
+const RegisterCard = ()=>{
     return(
         <>
             <div className = "CardContainer">
@@ -18,10 +17,11 @@ const LoginCard = ()=>{
                     <div className = "devchallengeZone">
                         <img alt = "devchallenge" src = {devChallenge}/>
                     </div>
-                    <h2 className = "CardTitle">Login</h2>
+                    <h2 className = "CardTitle">Join thousands of learners from around the world</h2>
+                    <p className = "CardText">Master web devlopement by making real-life projects. There are multiple paths for you to choose</p>
                 </div>
                 <div className = "SecondPart FormPart">
-                    <form action = "http://localhost:4000/api/auth/VerifyAccount" method="post">
+                    <form action = "http://localhost:4000/api/auth/newAccount" method="post">
                         <div className = "InputZone">
                             <img className = "InputIcon mailIcon" alt = "email" src = {emailIcon} /><input className = "button emailButton" placeholder = "Email" name = "email" type = "email"/>
                             <br/><img alt = "passIcon InputIcon" src = {lockIcon} /><input className = "button passButton" placeholder = "Password" name = "password" type = "password"/>
@@ -36,7 +36,7 @@ const LoginCard = ()=>{
                                 <div className = "TwitterLogin mediaBox"><img alt = "twitter" src = {twitterIcon}/></div>
                                 <div className = "GithubLogin mediaBox"><img alt = "github" src = {githubIcon}/></div>
                              </div>
-                             <p className = "transparentParagraphe AlreadyMemberTexte">Dont have an account yet?<Link to = "/Register" className = "BlueLoginButton">Register</Link></p>
+                             <p className = "transparentParagraphe AlreadyMemberTexte">Already a member?<Link to = "/Login" className = "BlueLoginButton">Login</Link></p>
                         </div>
                     </form>
                 </div>
@@ -45,4 +45,4 @@ const LoginCard = ()=>{
     )
 }
 
-export default LoginCard;
+export default RegisterCard;
