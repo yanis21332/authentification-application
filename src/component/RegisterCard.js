@@ -10,6 +10,33 @@ import devChallenge from '../elements/devchallenges.svg';
 import {Link} from 'react-router-dom';
 
 const RegisterCard = ()=>{
+    const OnFormSubmit = e => {
+        e.preventDefault();
+
+        let email = document.getElementById("EmailInput").textContent;
+        let password = document.getElementById("PasswordInput").textContent;
+        const info = {
+            email: email,
+            password: password
+        }
+
+        let promise1 = fetch("http://localhost:4000/newAccount",{
+            method: "POST",
+            body: JSON.stringify(info),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        promise1.then(async(response)=>{
+            try{
+                let contenu = response.json();
+                console.log(contenu)
+            }catch(e){
+                console.log(e)
+            }
+        })
+    }
+
     return(
         <>
             <div className = "CardContainer">
@@ -21,10 +48,10 @@ const RegisterCard = ()=>{
                     <p className = "CardText">Master web devlopement by making real-life projects. There are multiple paths for you to choose</p>
                 </div>
                 <div className = "SecondPart FormPart">
-                    <form action = "http://localhost:4000/api/auth/newAccount" method="post">
+                    <form onSubmit = {OnFormSubmit} action = "http://localhost:4000/api/auth/newAccount" method="post">
                         <div className = "InputZone">
-                            <img className = "InputIcon mailIcon" alt = "email" src = {emailIcon} /><input className = "button emailButton" placeholder = "Email" name = "email" type = "email"/>
-                            <br/><img alt = "passIcon InputIcon" src = {lockIcon} /><input className = "button passButton" placeholder = "Password" name = "password" type = "password"/>
+                            <img className = "InputIcon mailIcon" alt = "email" src = {emailIcon} /><input id = "EmailInput" className = "button emailButton" placeholder = "Email" name = "email" type = "email"/>
+                            <br/><img alt = "passIcon InputIcon" src = {lockIcon} /><input id ="PasswordInput" className = "button passButton" placeholder = "Password" name = "password" type = "password"/>
 
                             <input value = "Start coding now" type = "submit" className = "submitButton"/>
                         </div>

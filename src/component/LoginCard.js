@@ -8,9 +8,24 @@ import emailIcon from '../elements/emailIcon.svg';
 import lockIcon from '../elements/lockIcon.svg';
 import devChallenge from '../elements/devchallenges.svg';
 
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 const LoginCard = ()=>{
+    const onSubmit = () => {
+        let email = document.getElementById("emailButton").textContent;
+        console.log(email)
+        let info = {
+            email: email
+        }
+        fetch("http://localhost:4000/VerifyAccount",{
+            mode: "no-cors",
+            method: "POST",
+            body: JSON.stringify(info),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
     return(
         <>
             <div className = "CardContainer">
@@ -23,10 +38,10 @@ const LoginCard = ()=>{
                 <div className = "SecondPart FormPart">
                     <form action = "http://localhost:4000/api/auth/VerifyAccount" method="post">
                         <div className = "InputZone">
-                            <img className = "InputIcon mailIcon" alt = "email" src = {emailIcon} /><input className = "button emailButton" placeholder = "Email" name = "email" type = "email"/>
-                            <br/><img alt = "passIcon InputIcon" src = {lockIcon} /><input className = "button passButton" placeholder = "Password" name = "password" type = "password"/>
+                            <img className = "InputIcon mailIcon" alt = "email" src = {emailIcon} /><input id = "emailButton" className = "button emailButton" placeholder = "Email" name = "email" type = "email"/>
+                            <br/><img alt = "passIcon InputIcon" src = {lockIcon} /><input id = "PassButton"  className = "button passButton" placeholder = "Password" name = "password" type = "password"/>
 
-                            <input value = "Start coding now" type = "submit" className = "submitButton"/>
+                            <Link onClick = {onSubmit} to = "/HomePage" value = "Start coding now" type = "submit" className = "submitButton">Login</Link>
                         </div>
                         <p className = "anotherChoiceP transparentParagraphe">or continue with these social profile</p>
                         <div className = "LoginWithSocialMedia">

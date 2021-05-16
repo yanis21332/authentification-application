@@ -1,0 +1,347 @@
+body{
+    background-color: #FAFAFB;
+    overflow-x: hidden;
+}
+*{
+    font-family: 'Noto Sans';
+}
+a{
+    text-align: center;
+    color: #828282;
+}
+header .UserMedia{
+    width: 42px;
+    height: 42px;
+    background: #97949438;
+    border-radius: 6px;
+}
+header .UserName{
+    font-weight: bold;
+    font-size: 0.85em;
+}
+.UserPhoto{
+    width: 100%;
+    border-radius: 6px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 18px;
+}
+header .UserProfileLink{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 27vh;
+}
+.reactif:hover{
+    cursor: pointer;
+}
+
+.DownArrow{
+    animation: toDownArrowAnimation 0.35s ease-in-out forwards;
+}
+.UpArrow{
+    animation:  toUpArrowAnimation 0.35s ease-in-out forwards;
+}
+
+@keyframes toUpArrowAnimation {
+    0%{
+        transform: rotateZ(-180deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+@keyframes toDownArrowAnimation {
+    100%{
+        transform: rotateZ(-180deg);
+    }
+}
+.presentateur{
+    color: #BDBDBD;
+    text-transform: uppercase;
+}
+
+.ProfileSection .Introduction{
+    text-align: center;
+}
+.ProfileSection .Introduction p,.ProfileSection .UserInformations .Head .leftPart p{
+    margin-top: -11px;
+}
+.ProfileSection .UserInformations .Head .rightPart a{
+    background: transparent;
+    border: 1px solid #828282;
+    border-radius: 12px;
+    width: 95.34px;
+    transform: translateY(-50%);
+    transition: 0.35s;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 6px 0;
+}
+.ProfileSection .UserInformations .Head .rightPart a:hover{
+    background: #828282;
+    color: white;
+}
+.ProfileSection .UserInformations .Head .rightPart {
+    position: relative;
+}
+.ProfileSection .UserInformations{
+    border: 1px solid #D3D3D3;
+    border-radius: 15px;
+    width: 60%;
+    margin: auto;
+}
+.ProfileSection .UserInformations .bloc .container{
+    margin: auto;
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+}
+.ProfileSection .UserInformations .toBorder{
+    border-bottom: 1px solid #D3D3D3;
+    width: 100%;
+}
+.ProfileSection .UserInformations .Head .container{
+    display: flex;
+    justify-content: space-between;
+}
+.ProfileSection .UserInformations .FirstBloc .ImageContainer{
+    width: 82px;
+    height: 82px;
+    background: #e8e8e8;
+    border-radius: 7px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.UserMedia img{
+  width: 100%;
+  border-radius: 6px;
+}
+.ProfileSection .UserInformations .UserImage{
+    width: 100%;
+    min-width: 82px;
+    height: 100%;
+    min-height: 82px;
+    border-radius: 7px;
+}
+.ProfileSection .UserInformations .FirstBloc .ImageContainer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    min-width: 82px;
+    min-height: 82px;
+}
+.ProfileSection .UserInformations .FirstBloc{
+    padding: 20px 0;
+}
+
+.ProfilePopup{
+    border: 1px solid #E0E0E0;
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    height: 176px;
+    max-width: 230px;
+    padding: 5px 2px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    animation: PopupAnimation 0.5s forwards;
+    top: 103px;
+    right: 0;
+}
+.ProfilePopup .prflbloc{
+    display: flex;
+    width: 83%;
+    margin: auto;
+}
+.ProfilePopup .prflbloc p{
+    margin-left: 14px;
+}
+.ProfilePopup .SecondPart p{
+    color: #EB5757;
+}
+.ProfilePopup .selected{
+    background: #F2F2F2;
+    border-radius: 8px;
+    padding: 0 11px;
+}
+.ProfilePopup .profileBloc{
+    display: flex;
+    width: 83%;
+    margin: auto;
+    margin-top: 12px;
+}
+.ProfilePopup .profileBloc:hover,.ProfilePopup .SecondPart:hover{
+    cursor: pointer;
+}
+.ProfilePopup .GroupChatBloc{
+    cursor: not-allowed;
+}
+.ProfilePopup .SecondPart{
+    border-top: 1px solid #E0E0E0;
+}
+.nope{
+    opacity: 0;
+    position: absolute;
+    top: 103px;
+    right: -250px
+}
+@keyframes PopupAnimation {
+    0%{
+        position: absolute;
+        top: 103px;
+        right: -250px;
+        opacity: 0;
+    }
+    100%{
+        position: absolute;
+        top: 103px;
+        right: 40px;
+        opacity: 1;
+    }
+}
+.none{
+    display: none;
+}
+
+@keyframes InversePopupAnimation{
+    0%{
+        position: absolute;
+        top: 103px;
+        right: 40px;
+        opacity: 1;
+    }
+    100%{
+        position: absolute;
+        top: 103px;
+        right: -250px;
+        opacity: 0;
+    }
+}
+.InversePopupAnimation{
+    animation: InversePopupAnimation 0.5s forwards;
+}
+
+
+
+
+
+.ModifyProfileSection .ContainerBox{
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 0 6.3vh;
+}
+.ModifyProfileSection .ContainerBox .Introduction p{
+    margin-top: -12px;
+    color: #828282;
+}
+.ModifyProfileSection{
+    width: 70%;
+    margin: auto;
+}
+.ModifyProfileSection a{
+    color: #2D9CDB;
+}
+.ModifyProfileSection a img{
+    margin-right: 10px;
+}
+
+.ModifyProfileSection .FormZone form .PhotoChanger{
+    display: flex;
+}
+.ModifyProfileSection .FormZone form .PhotoChanger .PhotoBloc{
+    height: 74px;
+    width: 74px;
+    background: #e4e4e5;
+    position: relative;
+    border-radius: 10px;
+}
+.ModifyProfileSection .FormZone form .PhotoChanger .ParagrapheDesignateur{
+    margin-left: 38px;
+    margin-top: 24px;
+}
+.ModifyProfileSection .FormZone form .PhotoChanger .PhotoBloc .Darker{
+    position: absolute;
+    top: 0;
+    background: black;
+    left: 0;
+    border-radius: 6px;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+}
+.ModifyProfileSection .FormZone form .UserPhoto{
+    width: 100%;
+    height: 100%;
+    min-width: 74px;
+    border-radius: 6px;
+    min-height: 74px;
+}
+.ModifyProfileSection .FormZone form .cameraPhoto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 33px;
+    transform: translate(-50%,-50%);
+}
+.ModifyProfileSection{
+    margin-bottom: 20px;
+}
+.ModifyProfileSection .FormZone form .PhotoChanger .PhotoBloc:hover{
+    cursor: pointer;
+}
+.inputZone{
+    margin-top: 15px;
+}
+.inputZone input{
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    border-radius: 12px;
+    outline: none;
+    padding: 12px 23px;
+    width: 100%;
+    max-width: 417px;
+    background: #fafafb;
+}
+.inputZone textarea{
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    border-radius: 12px;
+    outline: none;
+    padding: 12px 23px;
+    width: 100%;
+    max-width: 417px;
+    background: #fafafb;
+    height: 100%;
+    min-height: 92px;
+    max-height: 92px;
+}
+.SaveButton{
+    outline: none;
+    background: #2F80ED;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    width: 82px;
+    height: 33px;
+    padding: 0;
+    transition: opacity 0.35s;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.SaveButton:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.GoBackLink{
+    margin: 20px 0;
+}
