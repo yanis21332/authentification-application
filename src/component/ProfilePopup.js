@@ -17,7 +17,15 @@ const ProfilePopup = () => {
                         <p>Group Chat</p>
                     </div>
                 </div>
-                <div className = "SecondPart prflbloc">
+                <div onClick={()=>{
+                    const cookies = document.cookie.split(";");
+                    for (const cookie of cookies) {
+                        const eqPos = cookie.indexOf("=");
+                        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                    }
+                    document.location.reload()
+                }} className = "SecondPart prflbloc">
                     <img alt = "logout image" src = {LogoutLogo} />
                     <p>Logout</p>
                 </div>
