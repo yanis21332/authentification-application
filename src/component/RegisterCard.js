@@ -12,6 +12,7 @@ import jwt from 'jwt-decode';
 
 import {Link} from 'react-router-dom';
 
+
 const RegisterCard = ()=>{
 
     const [error,setError] = useState("")
@@ -50,7 +51,7 @@ const RegisterCard = ()=>{
         }
         console.log(info)
         console.log(document.getElementById("EmailInput"));
-        axios.post("http://localhost:4000/newAccount",info).then(res=>{
+        axios.post("https://authappback.onrender.com/newAccount",info).then(res=>{
             if(!res.data.error){
                 console.log(res.data)
                 setError("")
@@ -76,7 +77,7 @@ const RegisterCard = ()=>{
                     <p className = "CardText">Master web devlopement by making real-life projects. There are multiple paths for you to choose</p>
                 </div>
                 <div className = "SecondPart FormPart">
-                    <form onSubmit = {OnFormSubmit} action = "http://localhost:4000/api/auth/newAccount" method="post">
+                    <form onSubmit = {OnFormSubmit} action = "https://authappback.onrender.com/api/auth/newAccount" method="post">
                         <div className = "InputZone">
                             <img className = "InputIcon mailIcon" alt = "email" src = {emailIcon} /><input id = "EmailInput" className = "button emailButton" placeholder = "Email" name = "email" type = "email"/>
                             <br/><img alt = "passIcon InputIcon" src = {lockIcon} /><input id ="PasswordInput" className = "button passButton" placeholder = "Password" name = "password" type = "password"/>

@@ -57,7 +57,7 @@ const HomePage = ({allstate,setAllstate}) => {
     useEffect(()=>{
         console.log("on est dans le render et ca se lit la !!!")
 
-        axios.get(`http://localhost:4000/getuser/${id}`).then(user=>{
+        axios.get(`https://authappback.onrender.com/getuser/${id}`).then(user=>{
             if(!user){
                 console.error("il n'y a pas d'utilisateur trouvé! ")
             }else{

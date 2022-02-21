@@ -47,7 +47,7 @@ const LoginCard = ()=>{
             email: email,
             password: password
         }
-        axios.post("http://localhost:4000/VerifyAccount",info).then(res=>{
+        axios.post("https://authappback.onrender.com/VerifyAccount",info).then(res=>{
             if(!res.data.error){
                 console.log("tout s'est bien passé")
                 let date = new Date(Date.now() + 1000*60*60*24*3); //259200000ms = 3 jour
